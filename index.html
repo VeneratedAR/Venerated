@@ -1,5 +1,4 @@
 
-
 <html>
   <head>
     <meta charset="utf-8">
@@ -9,18 +8,15 @@
   </head>
   <body>
 	<a-scene embedded arjs>
-	<a-entity
-	  scale="0.15 0.15 0.15"
-	  rotation="0 0 0"
-          gltf-model="objects/3DCompressed.gltf"
-	  animation="property: rotation; to: 0 360 0; loop: true; easing: linear;  dur: 9000"
-        >
-      <!-- Your scene contents go here -->
-      	</a-entity>
-		<a-entity position="0 1.5 -2">
-	  <a-text value="Venerated 6ix7even Zip-Up" color="white" align="center"></a-text>
+	<a-entity position="0 1.5 -2" gps-camera>
+          <a-entity
+	    scale="0.15 0.15 0.15"
+	    rotation="0 0 0"
+            gltf-model="objects/3DCompressed.gltf"
+	    animation="property: rotation; to: 0 360 0; loop: true; easing: linear;  dur: 9000"
+          ></a-entity>
+          <a-text value="Venerated 6ix7even Zip-Up" color="white" align="center"></a-text>
 	</a-entity>
-	<a-marker-camera preset='hiro'></a-marker-camera>
     </a-scene>
   </body>
 </html>
