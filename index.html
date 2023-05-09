@@ -7,9 +7,16 @@
   </head>
   <body>
     <a-scene embedded arjs>
-      <a-entity gps-entity-place look-at="[gps-camera]" position="0 0 -7">
-        <a-entity scale="0.3 0.3 0.3" rotation="0 0 0" gltf-model="objects/3DCompressed.gltf" animation="property: rotation; to: 0 360 0; loop: true; easing: linear;  dur: 9000"></a-entity>
-        <a-text value="Venerated 6ix7even Zip-Up" color="white" align="center" position="0 -2 0"></a-text>
+           <a-entity position="-1.5 1.6 -3">
+        <a-entity gltf-model="#model1" scale="0.05 0.05 0.05">
+          <a-text value="100% Cotton" position="0 1.5 -2"></a-text>
+        </a-entity>
+        <a-entity position="2.2 0 -1" gltf-model="#model2" scale="0.05 0.05 0.05">
+          <a-text value="Double Layered Hoodie" position="0 1.5 -2"></a-text>
+        </a-entity>
+        <a-entity position="-1.5 0 2.5" gltf-model="#model3" scale="0.05 0.05 0.05">
+          <a-text value="Puff print" position="0 1.5 -2"></a-text>
+        </a-entity>
       </a-entity>
       <a-entity gps-camera></a-entity>
     </a-scene>
