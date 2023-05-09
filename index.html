@@ -6,41 +6,19 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   </head>
   <body>
-   <a-scene embedded arjs>
-  <a-entity position="0 0 -5">
-    <a-entity scale="0.3 0.3 0.3" rotation="0 0 0" gltf-model="objects/3DCompressed.gltf" animation="property: rotation; to: 0 360 0; loop: true; easing: linear;  dur: 9000"></a-entity>
-    <a-text value="Double Layered Hoodie" color="white" align="center" position="0 -1 0"></a-text>
-    <a-text value="High Quality Puff Print" color="white" align="center" position="3 1 0"></a-text>
-    <a-text value="420 GSM Heavy Weight" color="white" align="center" position="-3 1 0"></a-text>
-    <a-text value="Venerated 6ix7even Zip-Up" color="white" align="center" position="0 3 0"></a-text>
-  </a-entity>
-  
-  <a-entity position="0 0 -12">
-    <a-entity scale="0.3 0.3 0.3" rotation="0 0 0" gltf-model="objects/3DCompressed.gltf" animation="property: rotation; to: 0 360 0; loop: true; easing: linear;  dur: 9000"></a-entity>
-    <a-text value="Double Layered Hoodie" color="white" align="center" position="0 -1 0"></a-text>
-    <a-text value="High Quality Puff Print" color="white" align="center" position="3 1 0"></a-text>
-    <a-text value="420 GSM Heavy Weight" color="white" align="center" position="-3 1 0"></a-text>
-    <a-text value="Venerated 6ix7even Zip-Up" color="white" align="center" position="0 3 0"></a-text>
-  </a-entity>
-  
-  <a-entity position="-8 0 -7">
-    <a-entity scale="0.3 0.3 0.3" rotation="0 0 0" gltf-model="objects/3DCompressed.gltf" animation="property: rotation; to: 0 360 0; loop: true; easing: linear;  dur: 9000"></a-entity>
-    <a-text value="Double Layered Hoodie" color="white" align="center" position="0 -1 0"></a-text>
-    <a-text value="High Quality Puff Print" color="white" align="center" position="3 1 0"></a-text>
-    <a-text value="420 GSM Heavy Weight" color="white" align="center" position="-3 1 0"></a-text>
-    <a-text value="Venerated 6ix7even Zip-Up" color="white" align="center" position="0 3 0"></a-text>
-  </a-entity>
-  
-  <a-entity position="8 0 -7">
-    <a-entity scale="0.3 0.3 0.3" rotation="0 0 0" gltf-model="objects/3DCompressed.gltf" animation="property: rotation; to: 0 360 0; loop: true; easing: linear;  dur: 9000"></a-entity>
-    <a-text value="Double Layered Hoodie" color="white" align="center" position="0 -1 0"></a-text>
-    <a-text value="High Quality Puff Print" color="white" align="center" position="3 1 0"></a-text>
-    <a-text value="420 GSM Heavy Weight" color="white" align="center" position="-3 1 0"></a-text>
-    <a-text value="Venerated 6ix7even Zip-Up" color="white" align="center" position="0 3 0"></a-text>
-  </a-entity>
-  
-  <a-entity gps-camera></a-entity>
-</a-scene>
-
+    <a-scene embedded arjs>
+      <a-entity gps-entity-place look-at="[gps-camera]" position="0 0 -7">
+        <a-entity scale="0.3 0.3 0.3" rotation="0 0 0" look-at="[position=0 0 -7]" gltf-model="objects/3DCompressed.gltf" animation="property: rotation; to: 0 360 0; loop: true; easing: linear;  dur: 9000"></a-entity>
+        <a-text value="Double Layered Hoodie" color="white" align="center" position="0 -1 0"></a-text>
+        <a-text value="High Quality Puff Print" color="white" align="center" position="3 1 0"></a-text>
+        <a-text value="420 GSM Heavy Weight" color="white" align="center" position="-3 1 0"></a-text>
+        <a-text value="Venerated 6ix7even Zip-Up" color="white" align="center" position="0 3 0"></a-text>
+      </a-entity>
+          <a-entity gps-entity-place look-at="[gps-camera]" position="7 0 -7">
+        <a-entity scale="0.3 0.3 0.3" rotation="0 0 0" look-at="[position=0 0 -7]" gltf-model="objects/3DCompressed.gltf" animation="property: rotation; to: 0 360 0; loop: true; easing: linear;  dur: 9000"></a-entity>
+        <a-text value="Venerated 6ix7even Zip-Up" color="white" align="center" position="0 -1 0"></a-text>
+      </a-entity>
+      <a-entity gps-camera></a-entity>
+    </a-scene>
   </body>
 </html>
