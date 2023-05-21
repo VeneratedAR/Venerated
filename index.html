@@ -8,8 +8,9 @@
   <body>
     <a-scene embedded arjs>
       <a-entity camera look-controls></a-entity>
-      <a-entity gps-entity-place follow="false" position="0 0 -11">
-        <a-entity scale="0.3 0.3 0.3" rotation="0 0 0"  gltf-model="objects/3DCompressed.gltf" animation="property: rotation; to: 0 360 0; loop: true; easing: linear;  dur: 9000"></a-entity>
+      <a-entity id="target" position="0 0 -5"></a-entity>
+      <a-entity gps-entity-place position="0 0 -11">
+        <a-entity scale="0.3 0.3 0.3" rotation="0 0 0"  gltf-model="objects/3DCompressed.gltf" animation="property: rotation; to: 0 360 0; loop: true; easing: linear;  dur: 9000" follow="#target"></a-entity>
         <a-text value="Double Layered Hoodie" color="white" align="center" position="0 -1 0"></a-text>
         <a-text value="High Quality Puff Print" color="white" align="center" position="3 1 0"></a-text>
         <a-text value="420 GSM Heavy Weight" color="white" align="center" position="-3 1 0"></a-text>
@@ -18,6 +19,24 @@
       <a-entity gps-entity-place follow="false" position="7 0 0">
         <a-entity scale="0.3 0.3 0.3" rotation="0 0 0"  gltf-model="objects/3DCompressed.gltf" animation="property: rotation; to: 0 360 0; loop: true; easing: linear;  dur: 9000"></a-entity>
       </a-entity>
+      
+      <script>
+        const target = document.querySelector('#target');
+        const camera = document.querySelector('[camera]');
+        const cameraPos = new THREE.Vector3();
+        const forwardVec = new THREE.Vector3(0, 0, -1);
+
+        // update target position on every tick
+        function tick() {
+          camera.object3D.getWorldPosition(cameraPos);
+          forwardVec.applyQuaternion(camera.object3D.getWorldQuaternion(forwardVec));
+          target.object3D.position.copy(cameraPos).add(forwardVec.multiplyScalar(5));
+        }
+        document.querySelector('a-scene').addEventListener('loaded', function () {
+          this.renderer.xr.enabled = true;
+          this.addEventListener('tick', tick);
+        });
+      </script>
     </a-scene>
   </body>
 </html>
