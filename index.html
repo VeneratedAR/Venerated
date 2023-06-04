@@ -33,7 +33,7 @@
 
 
             <!-- The sun is now our 'origin' which makes things a lot easier -->
-            <a-sphere id="sun" position="0 0 0" radius="4" color="#F5C85D" src="#sun-texture"></a-sphere>
+            <a-entity scale="0.3 0.3 0.3" rotation="0 0 0"  gltf-model="objects/3DCompressed.gltf" animation="property: rotation; to: 0 360 0; loop: true; easing: linear;  dur: 9000" follow="#target"></a-entity>
 
             <!-- We'll add an asteroid belt using a gltf model, see the Readme
             for more info about how to use these -->
